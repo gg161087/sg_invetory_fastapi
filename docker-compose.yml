@@ -1,0 +1,17 @@
+services:
+  sg_inventory_fastapi:
+    image: sg_inventory_fastapi:latest
+    container_name: sg_inventory_fastapi
+    networks:
+      - sg_invenroy_network
+    ports:
+      - "4000:4000"
+    environment:
+      - SECRET_KEY=ThisIsNotSecret
+      - SQLALCHEMY_DATABASE_URL=mysql+pymysql://USER:PWD@IP_DB:3306/DB_NAME
+    command: uvicorn main:app --host 0.0.0.0 --port 4000 --reload
+
+networks:
+  sg_invenroy_network:
+    driver: bridge
+    enable_ipv6: false

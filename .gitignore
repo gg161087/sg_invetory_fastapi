@@ -11,7 +11,7 @@ __pycache__/
 
 # Archivos de bases de datos locales
 *.sqlite3
-#*.db
+*.db
 
 # Cachés de Python
 *.py[cod]
